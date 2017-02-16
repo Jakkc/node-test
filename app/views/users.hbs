@@ -1,0 +1,33 @@
+<h1>Add yourself as a user</h1>
+<div class="row">
+	<div class="col s6">
+		<form action="/users" method="post">
+			<ul>
+				<li>
+					<label for="name">Your name</label>
+					<input type="text" name="name">		
+				</li>
+				<li>
+					<label for="name">Your age</label>
+					<input type="text" name="age">		
+				</li>
+				<li>
+					<input type="submit" value="Submit">
+				</li>
+			</ul>
+		</form>		
+	</div>
+</div>
+
+
+<h2>All Users</h2>
+<ul>
+	{{#each rows}}
+		<li>
+		  <div class="chip">
+			    <img src="http://placehold.it/50x50">
+			    {{this.name}} | {{this.age}}
+		  </div>
+		 </li>
+	{{/each}}
+</ul>
