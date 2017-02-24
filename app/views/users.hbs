@@ -1,4 +1,4 @@
-<h1>Add yourself as a user</h1>
+<h1>Add yourself as a user, {{name}}</h1>
 <div class="row">
 	<div class="col s6">
 		<form action="/users" method="post">
@@ -22,7 +22,7 @@
 
 <h2>All Users</h2>
 <ul>
-	{{#each rows}}
+	{{#each users}}
 		<li>
 		  <div class="chip">
 			    <img src="http://placehold.it/50x50">
