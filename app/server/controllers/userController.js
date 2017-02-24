@@ -9,7 +9,9 @@ userController.post = (req, res) => {
 	req.checkBody('name','Your name is required').notEmpty();
 	req.checkBody('age','Your age is required').notEmpty();
 
-	const errors = req.validationErrors();
+	const errors = req.validationErrors((result) => result.mapped());
+
+	console.log(errors);
 
 	if(errors) {
 		req.session.errors = errors;

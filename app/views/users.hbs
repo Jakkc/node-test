@@ -6,18 +6,18 @@
 				<li>
 					<label for="name">Your name</label>
 					<input type="text" name="name">
+					{{#if errors.name}}
+						<span>{{errors.name.msg}}</span>
+					{{/if}}
 				</li>
 				<li>
 					<label for="name">Your age</label>
-					<input type="text" name="age">		
+					<input type="text" name="age">
+					{{#if errors.age}}
+						<span>{{errors.age.msg}}</span>
+					{{/if}}
 				</li>
-				{{#if errors}}
-				<li>
-				{{#each errors}}
-						<p>{{this.msg}}</p>	
-				{{/each}}
-				</li>
-				{{/if}}
+				
 				<li>
 					<input type="submit" value="Submit">
 				</li>
