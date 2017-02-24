@@ -1,6 +1,5 @@
 const app = require('./server/app');
 const port = 3000;
-const express = require('express');
 const environment = require('./server/environment'); 
 
 // set up view engine + static assets path

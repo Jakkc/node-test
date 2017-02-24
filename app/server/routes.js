@@ -14,9 +14,8 @@ const routes = (app) => {
 
 	app.get('/test', basicController.get);
 
-	app.get('/users', userController.get);
-
 	// User Routes
+	app.get('/users', userController.get);
 	app.post('/users', userController.post);
 }
 

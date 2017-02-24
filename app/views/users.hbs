@@ -5,12 +5,19 @@
 			<ul>
 				<li>
 					<label for="name">Your name</label>
-					<input type="text" name="name">		
+					<input type="text" name="name">
 				</li>
 				<li>
 					<label for="name">Your age</label>
 					<input type="text" name="age">		
 				</li>
+				{{#if errors}}
+				<li>
+				{{#each errors}}
+						<p>{{this.msg}}</p>	
+				{{/each}}
+				</li>
+				{{/if}}
 				<li>
 					<input type="submit" value="Submit">
 				</li>
@@ -21,7 +28,7 @@
 
 
 <h2>All Users</h2>
-<ul>
+<ul style="column-count:4">
 	{{#each users}}
 		<li>
 		  <div class="chip">
