@@ -1,0 +1,9 @@
+$module: 'test';
+
+.#{$module} {
+	background-color: salmon;
+
+	&__items {
+		background-color: bisque;
+	}
+}
