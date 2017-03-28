@@ -1,0 +1,65 @@
+<h3>Gooey Effect</h3>
+	<div class="gooey">
+		<ul class="gooey__items">
+			<li class="gooey__filter">
+				<div class="gooey__rectangle"></div>				
+			</li>
+			<li class="gooey__item active">Editorial</li>
+			<li class="gooey__item">E-Commerce</li>
+			<li class="gooey__item">Web Application</li>
+			<li class="gooey__item">Corporate</li>
+			<li class="gooey__item">Audit</li>
+		</ul>
+	</div>
+
+	<svg class="gooey__svg-filter" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <defs>
+	    <filter id="gooey">
+	      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+	      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+	      <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+	    </filter>
+	  </defs>
+	</svg>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <defs>
+	    <filter id="gooey2">
+	      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+	      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 17 -7" result="goo" />
+	      <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+	    </filter>
+	  </defs>
+	</svg>
+<h3>SVG Nav</h3>
+<div>
+	<ul class="nav__items">
+		<li class="nav__item">
+			{{> svg-hover-logo }}
+		</li>
+		<li class="nav__item">
+			{{> svg-hover 
+				test-title="Explore Services"
+			}}
+		</li>
+		<li class="nav__item">
+			{{> svg-hover 
+				test-title="About Us"
+			}}
+		</li>
+		<li class="nav__item">
+			{{> svg-hover-pancake }}
+		</li>
+	</ul>
+</div>
+<h3>Parallax Card</h3>
+{{> parallax-card }}
+<h3>SVG Button</h3>
+{{> svg-button }}
+<h3>The Squishybit Nav</h3>
+<p>(it's not really squishing though)</p>
+{{> squishybit}}
+<h3>Parallax Scroll Effect</h3>
+{{> parallax-scroll}}
+
+<div class="mousePos"></div>

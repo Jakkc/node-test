@@ -1,0 +1,68 @@
+$red: #e8404f;
+$module: 'hover-svg';
+
+.#{$module} {
+	height: 70px;
+	cursor: pointer;
+	display: block;
+
+	&__item {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+		pointer-events: none;
+		z-index: 1;
+		
+		> path {
+			transform: translateY(100%);
+			transition: transform 0.5s ease-in;
+
+			.#{$module}:hover & {
+				transform: translateY(0);
+				transition: transform 0.01s ease-in;
+			}	
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 2;
+
+		.active & {
+			color: white;
+		}
+	}
+
+	&__text {
+		fill: $red;
+		transition: fill 0.2s ease-in 0.15s;
+		.#{$module}:hover & {
+			fill: white;
+		}
+	}
+
+	&__logo {
+		pointer-events: none;
+		width: 80%;
+    	height: 80%;
+	    margin: 0 auto;
+	    position: absolute;
+	    top: 50%;
+	    left: 0;
+	    right: 0;
+	    transform: translateY(-50%);
+	    z-index: 3;
+
+	    & .cls-1 {
+	    	.#{$module}:hover & {
+	    		fill: white;
+	    		transition: fill 0.2s ease-in 0.15s;
+	    	}
+	    }
+	}
+}

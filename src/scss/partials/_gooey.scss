@@ -1,0 +1,66 @@
+$yellow: rgb(251, 181, 42);
+$border-radius: 25px;
+$module: 'gooey';
+
+.#{$module} {
+	background-color: $yellow;
+	padding: 30px 10px;
+	font-size: 14px;
+	font-family: 'Comic Sans MS';
+
+	&__svg-filter {
+		display: none;
+	}
+
+	&__inner {
+		position: relative;
+	}
+
+	&__rectangle {
+		position: absolute;
+		background-color: white;
+		top: 10px;
+		left: 2px;
+		border-radius: $border-radius;
+		z-index: 2;
+		//opacity: 0;
+		backface-visibility: hidden;
+		transition-property: all;
+		transition-timing-function: ease-in;
+	}
+
+	&__filter {
+		z-index: 2;
+	}
+
+	&__items {
+		position: relative;
+		border-radius: $border-radius;
+		z-index: 1;
+		padding: 10px;
+		filter: url('#gooey');
+
+		> li {
+			display: inline-block;
+			margin: 0 15px;
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding: 20px 25px;
+		background-color: white;
+		color: $yellow;
+		text-transform: uppercase;
+		border-radius: $border-radius;
+		z-index: 3;
+		cursor: pointer;
+		box-shadow: 0 0 0 rgba(mix($yellow,white,50%),0.8);
+		transition: box-shadow 0.1s ease-in;
+
+		&.active {
+			box-shadow: 0 5px 15px rgba(mix($yellow,white,50%),0.6);
+			filter: none;
+		}
+	}
+}

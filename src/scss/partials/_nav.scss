@@ -1,0 +1,70 @@
+$red: #e8404f;
+
+$module: 'nav';
+
+.#{$module} {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 3403;
+	display: none;
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		color: $red;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		position: relative;
+		overflow: hidden;
+		width: 25%;
+		border: 2px solid mix($red,white,50%);
+		margin: 0 2px;
+
+		&* {
+			backface-visibility: hidden;
+		}
+	}
+
+	&__pancake {
+		pointer-events: none;
+		z-index: 3;
+		position: absolute;
+	    top: 50%;
+    	left: 50%;
+    	transform: translate(-50%,-50%);
+		width: 25px;
+		height: 5px;
+		border-radius: 4px;
+		background-color: $red;
+		transition: background-color 0.2s ease-in 0.15s;
+
+		&:before, &:after {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 25px;
+			border-radius: 4px;
+			background-color: $red;
+			transition: background-color 0.2s ease-in 0.15s;
+		}
+
+		&:before {
+			top: -10px;
+		}
+
+		&:after {
+			bottom: -10px;
+		}
+		
+		.hover-svg:hover &, .hover-svg:hover &:before,
+		.hover-svg:hover &:after {
+			background-color: white;
+		}
+	}
+}

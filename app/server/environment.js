@@ -13,7 +13,7 @@ const environment = (app) => {
 	app.set('view engine', '.hbs')
 	app.set('views', path.join(__dirname,'./../views'))
 
-	app.use(express.static(__dirname + './../src'));
+	app.use(express.static(__dirname + './../assets'));
 }
 
 module.exports = environment;

@@ -2,12 +2,20 @@
 	<head>
 		<title>Basic Template</title>
 		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
 	</head>
 	{{> header}}
 	<body>
-		<div class="container">
+		<div class="container" data-js="transition.container">
 			{{{body}}}	
 		</div>
+		<div class="transition" data-js="transition">
+			<div class="transition--bottom" data-js="transition.bottom"></div>
+			<div class="transition--top" data-js="transition.top"></div>
+		</div>
+		
+		<script type="text/javascript" src="bundle.js"></script>
 	</body>
 	{{> footer}}
 </html>

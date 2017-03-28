@@ -1,0 +1,78 @@
+$module: 'parallax-card';
+$inout: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+.#{$module} {
+	font-family: 'Helvetica';
+	position: relative;
+	width: 400px;
+	perspective: 400px;
+
+
+	&__wrapper {
+		position: relative;
+		perspective: 400px;
+		height: 300px;
+		transition: transform 0.3s $inout;
+
+		.#{$module}:hover & {
+			transform: translateZ(-15px);
+		}
+	}
+
+	&__bg, &__shiny, &__content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__bg {
+		background-repeat: no-repeat;
+		background-size: cover;
+		box-shadow: 0 0 0 rgba(black,0);
+		transition: box-shadow 0.2s ease-in;
+		
+		.#{$module}:hover & {
+			box-shadow: 0 8px 15px 5px rgba(black,0.35);
+		}
+	}
+
+	&__shiny {
+		background-image: linear-gradient(180deg, rgba(#2af598,0.9) 0%, rgba(#009efd,0.9) 100%);
+		opacity: 0;
+		transition: opacity 0.2s ease-in;
+
+		.#{$module}:hover & {
+			opacity: 1;
+		}
+	}
+
+	&__content {
+		color: white;
+		padding: 0 15px;
+		pointer-events: none;
+		transform: translateY(75%);
+		transition: transform 0.4s ease-in;
+
+		.#{$module}:hover & {
+			transform: translateY(0);
+		}
+	}
+
+	&__inner {
+		opacity: 0;
+		text-shadow: 1px 1px 1px black;
+		transition: opacity 0.0000001s ease-in;
+
+		.#{$module}:hover & {
+			opacity: 1;
+			transition: opacity 0.4s ease-in 0.4s;
+		}
+	}
+
+	&__title {
+		font-size: 32px;
+		text-transform: uppercase;
+	}
+}

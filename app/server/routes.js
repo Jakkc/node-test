@@ -14,6 +14,12 @@ const routes = (app) => {
 
 	app.get('/test', basicController.get);
 
+	app.get('/svg', (req,res) => res.render('svg-test'));
+
+	app.get('/react', (req,res) => {
+		res.render('react');
+	})
+
 	// User Routes
 	app.get('/users', userController.get);
 	app.post('/users', userController.post);

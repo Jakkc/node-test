@@ -1,0 +1,77 @@
+$padVert: 70px;
+$padHoriz: 25px;
+$padHorizOffset: 450px;
+
+$module: 'parallax-scroll';
+
+.#{$module} {
+	margin: 0 0 700px;
+	color: white;
+	text-transform: uppercase;
+
+	&__item {
+		position: relative;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-around;
+		font-family: 'Source Sans Pro';
+		background-color: salmon;
+		margin: 100px 0;
+		padding: $padVert $padHoriz $padVert $padHorizOffset;
+		
+	}
+
+	&__item--alt {
+		@extend .#{$module}__item;
+		padding: $padVert $padHorizOffset $padVert $padHoriz;
+	}
+
+	&__content {
+		position: relative;
+		max-width: 400px;
+		opacity: 0;
+		transform: translateX(100%);
+		transition: all 0.4s ease-in;
+
+		.#{$module}__item--alt & {
+			transform: translateX(-100%);
+		}
+
+		.active & {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&__heading {
+		font-weight: bold;
+		font-size: 72px;
+		line-height: 0.9;
+	}
+
+	&__img {
+		height: 350px;
+		width: 400px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: ($padHoriz * 2);
+		transition: transform 0.1s ease-in;
+
+		.#{$module}__item--alt & {
+			left: auto;
+			right: ($padHoriz * 2);
+		}
+	}
+
+	&__link {
+		font-size: 24px;
+		opacity: 0;
+
+		.active & {
+			opacity: 1;
+			transition: opacity 0.2s ease-in 0.4s;
+		}
+	}
+}
